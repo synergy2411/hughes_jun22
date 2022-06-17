@@ -125,3 +125,8 @@ React v16.8 -> Hooks
 
 - State changes, React re-render the Component -> setState()
 - JavaScript Variables, doesn't maintain watchers about them
+
+
+# Form Elements
+- Uncontrolled
+- Controlled
