@@ -112,3 +112,16 @@ Promise -> used to execute async task; two states - resolve reject
 
 # to install bootstrap -> 
 > npm i bootstrap@4
+
+
+# Hooks : support for functional components
+
+React v16.8 -> Hooks
+
+- Class : state management, side effects etc
+
+- Function : state - useState, side effects calls  - useEffect etc
+
+
+- State changes, React re-render the Component -> setState()
+- JavaScript Variables, doesn't maintain watchers about them
