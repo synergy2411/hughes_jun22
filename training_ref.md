@@ -97,3 +97,18 @@ Promise -> used to execute async task; two states - resolve reject
 •	Optional and Named Parameters
 •	Classes & Modules
 •	Working with Modules
+
+
+# Thinking in React
+- What code is eligible to be a component
+
+# Atomic Web Design Principle
+- Atom : Smalled unit eg. button, p, li, input etc
+- Molecule : Combo of Atoms eg. searchbar -> Input + Button
+- Organism : Combo of Molecules eg. Form may conatin label with input filed, checkboxes and radio buttons, navigation bar : various links + SerachBar
+- Template : combo Organism eg. 
+- Page : Impl of Templates
+
+
+# to install bootstrap -> 
+> npm i bootstrap@4
