@@ -1,4 +1,5 @@
 import React from 'react';
+import ClassBasedComp from './Components/Demo/ClassBasedComp';
 import Notes from './Components/Notes/Notes';
 
 
@@ -7,7 +8,14 @@ const App = () => {
     <div className='container'>
       <h2>Hello React!!!</h2>
       <p>This is another content...</p>
-      <Notes />
+
+      <ClassBasedComp show={true}>
+          <div>
+            <h5>The container Element</h5>
+          </div>
+      </ClassBasedComp>
+
+      {/* <Notes /> */}
     </div>
   )
 }
