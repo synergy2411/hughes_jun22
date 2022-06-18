@@ -33,8 +33,12 @@ const Notes = () => {
 
     const filteredNote = notes.filter(note => note.createdAt.getFullYear().toString() === selectedYear)
 
+    // const throwMyError = () => {
+    //     throw new Error("I intentionally throw this error")
+    // }
     return (
         <div>
+            {/* <button className='btn btn-danger' onClick={throwMyError}>Throw Error</button> */}
             <h3 className="text-center display-4">Notes App</h3>
             <div className="row">
                 <div className="col-4 offset-4">
@@ -50,7 +54,7 @@ const Notes = () => {
             {show && <AddNote onAddNote = { addNote } onCancel={() => setShow(!show)}/>}
             <br />
             <div className="row">
-               {filteredNote.map(note => <NoteItem note={note} onDeleteItem={deleteNote} />)}
+               {filteredNote.map(note => <NoteItem key={note.id} note={note} onDeleteItem={deleteNote} />)}
             </div>
         </div>
     )

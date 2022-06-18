@@ -1,5 +1,7 @@
 import React from 'react';
+import Login from './Components/Auth/Login';
 import ClassBasedComp from './Components/Demo/ClassBasedComp';
+import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
 import Notes from './Components/Notes/Notes';
 
 
@@ -9,11 +11,16 @@ const App = () => {
       <h2>Hello React!!!</h2>
       <p>This is another content...</p>
 
-      <ClassBasedComp show={true}>
+    <ErrorBoundary>
+      <Login />
+      {/* <Notes /> */}
+    </ErrorBoundary>
+
+      {/* <ClassBasedComp show={true}>
           <div>
             <h5>The container Element</h5>
           </div>
-      </ClassBasedComp>
+      </ClassBasedComp> */}
 
       {/* <Notes /> */}
     </div>
