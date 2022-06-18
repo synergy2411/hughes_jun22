@@ -37,10 +37,10 @@ const Notes = () => {
     //     throw new Error("I intentionally throw this error")
     // }
 
-    const rnd = Math.floor(Math.random() * 10)
-    if(rnd < 5){
-        throw new Error("Too less Value")
-    }
+    // const rnd = Math.floor(Math.random() * 10)
+    // if(rnd < 5){
+    //     throw new Error("Too less Value")
+    // }
 
     return (
         <div>

@@ -4,6 +4,7 @@ import classes from "./Login.module.css";
 const Login = () => {
     const [enteredEmail, setEnteredEmail] = useState('');
     const [emailIsBlurred, setEmailIsBlurred] = useState(false);
+    const [passwordIsValid, setPasswordIsValid] = useState(true)
 
     const inputPasswordRef = useRef(null)
 
@@ -19,8 +20,16 @@ const Login = () => {
         console.log("Password : ", inputPasswordRef.current.value)
     }
 
-    const passwordBlurHandler = () => {}
-
+    const passwordBlurHandler = () => { 
+        if(inputPasswordRef.current.value.trim() === ''){
+            setPasswordIsValid(false)
+        }else if(inputPasswordRef.current.value.length < 6){
+            setPasswordIsValid(false)
+        }else{
+            setPasswordIsValid(true)
+        }
+    }
+   
     let emailClasses = emailIsEmpty && emailContainsAtSign && emailIsBlurred ?
                              classes['Valid'] : classes['Invalid']
 
@@ -35,18 +44,19 @@ const Login = () => {
                     value={enteredEmail}
                     onBlur = { () => setEmailIsBlurred(true)}
                     onChange={(event) => setEnteredEmail(event.target.value)} />
-                    
+
                     {emailIsEmptyAndBlurred && <div className='alert alert-danger'>- Email is mandatory field</div>}
                     {emailContainsAtSignAndBlurred && <div className='alert alert-danger'>- Email must be in proper format</div>}
 
                 {/* password - Uncontrolled*/}
                 <label htmlFor='password'>Password :</label>
                 <input type="password"
-                    className='form-control'
+                    className={`form-control ${!passwordIsValid ? classes['Invalid'] : ''} `}
                     name='password'
                     ref={inputPasswordRef}
                     onBlur={passwordBlurHandler} />
-               
+                    {!passwordIsValid && <div className='alert alert-danger'>
+                        - Password is mandatory field and should contain at least 6 characters</div>}               
                 {/* buttons */}
                 <button className='btn btn-primary' type='submit'>Submit</button>
             </form>
