@@ -13,7 +13,7 @@ const App = () => {
 
     <ErrorBoundary>
       <Login />
-      {/* <Notes /> */}
+      <Notes />
     </ErrorBoundary>
 
       {/* <ClassBasedComp show={true}>

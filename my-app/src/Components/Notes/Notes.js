@@ -36,6 +36,12 @@ const Notes = () => {
     // const throwMyError = () => {
     //     throw new Error("I intentionally throw this error")
     // }
+
+    const rnd = Math.floor(Math.random() * 10)
+    if(rnd < 5){
+        throw new Error("Too less Value")
+    }
+
     return (
         <div>
             {/* <button className='btn btn-danger' onClick={throwMyError}>Throw Error</button> */}
