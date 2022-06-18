@@ -13,6 +13,8 @@ const NoteItem = (props) => {
                     <p className="lead">Amount : ${props.note.amount}</p>
                     {/* <em>Created At : {props.note.createdAt.toString()}</em> */}
                     <NoteDate createdAt={props.note.createdAt} />
+                    <button className="btn btn-danger btn-block btn-sm" 
+                        onClick={() => props.onDeleteItem(props.note.id)}>DELETE</button>
                 </div>
             </div>
         </div>

@@ -68,7 +68,8 @@ const AddNote = (props) => {
                                         <button type='submit' className='btn btn-primary btn-block'>Add</button>
                                     </div>
                                     <div className='col-6'>
-                                    <button className='btn btn-warning btn-block'>Cancel</button>
+                                    <button className='btn btn-warning btn-block'
+                                        onClick={props.onCancel}>Cancel</button>
                                     </div>
                                 </div>
                             </div>

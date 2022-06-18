@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AddNote from "./AddNote/AddNote";
+import FilterNote from './FilterNote/FilterNote';
 import NoteItem from "./NoteItem/NoteItem";
 
 const INITIAL_NOTES = [
@@ -27,6 +28,9 @@ const Notes = () => {
         })
     }
 
+    const deleteNote = noteId => {
+        setNotes(prevState =>  prevState.filter(note => note.id !== noteId))
+    }
     return (
         <div>
             <h3 className="text-center display-4">Notes App</h3>
@@ -37,11 +41,14 @@ const Notes = () => {
                             {show ? 'Hide Form' : 'Show Form'}
                         </button>
                 </div>
+                <div className='col-4'>
+                    <FilterNote />
+                </div>
             </div>
-            {show && <AddNote onAddNote = { addNote } />}
+            {show && <AddNote onAddNote = { addNote } onCancel={() => setShow(!show)}/>}
             <br />
             <div className="row">
-               {notes.map(note => <NoteItem note={note} />)}
+               {notes.map(note => <NoteItem note={note} onDeleteItem={deleteNote} />)}
             </div>
         </div>
     )

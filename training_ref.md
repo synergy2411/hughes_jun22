@@ -130,3 +130,5 @@ React v16.8 -> Hooks
 # Form Elements
 - Uncontrolled
 - Controlled
+
+# Immutable Principle - NEVER EVER modify existing state
