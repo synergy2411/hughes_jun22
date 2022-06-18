@@ -15,22 +15,24 @@ const Notes = () => {
     const [notes, setNotes] = useState(INITIAL_NOTES)   
 
     const [show, setShow] = useState(false)
+
+    const [selectedYear, setSelectedYear] = useState('2019')
     
-    const toggleHandler = () => {
-        setShow(!show)
-    }
+    const toggleHandler = () => setShow(!show);
 
     // to add Note
     const addNote = (note) => {
-        console.log("ADDING NOTE : ", note)
         setNotes((prevNote) => {
             return [note, ...prevNote]
-        })
+        });
+        setShow(!show)
     }
 
-    const deleteNote = noteId => {
-        setNotes(prevState =>  prevState.filter(note => note.id !== noteId))
-    }
+    const deleteNote = noteId => setNotes(prevState =>  prevState.filter(note => note.id !== noteId));
+    const onSelectedYear = (yearSelected) => setSelectedYear(yearSelected);
+
+    const filteredNote = notes.filter(note => note.createdAt.getFullYear().toString() === selectedYear)
+
     return (
         <div>
             <h3 className="text-center display-4">Notes App</h3>
@@ -42,13 +44,13 @@ const Notes = () => {
                         </button>
                 </div>
                 <div className='col-4'>
-                    <FilterNote />
+                    <FilterNote onYearSelect={onSelectedYear} initialYear={selectedYear} />
                 </div>
             </div>
             {show && <AddNote onAddNote = { addNote } onCancel={() => setShow(!show)}/>}
             <br />
             <div className="row">
-               {notes.map(note => <NoteItem note={note} onDeleteItem={deleteNote} />)}
+               {filteredNote.map(note => <NoteItem note={note} onDeleteItem={deleteNote} />)}
             </div>
         </div>
     )
