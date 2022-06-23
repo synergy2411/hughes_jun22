@@ -148,3 +148,7 @@ React v16.8 -> Hooks
 - ngOnInit / componentDidMount / useEffect(cb, [])
 - ngDoCheck / componentDidUpdate / useEffect(cb, [Dependency])
 - ngOnDestory / componentWillUnmount / useEffect(cb => cleanup, [Dependency])
+
+
+
+# useReducer() -> to manage the complex state
