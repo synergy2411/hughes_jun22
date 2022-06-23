@@ -158,3 +158,9 @@ React v16.8 -> Hooks
 # Context API -> problem of "Prop-Drilling"
 
 A -> B -> C -> D -> E
+
+# useCallback(cb, []) : returns memoized Callback/function
+
+# useMemo(()=>{return () => {} }, []) : return the memoizedValue
+
+useMemo(()=>Fn,[]) === useCallback(cb,[])

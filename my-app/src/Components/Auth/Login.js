@@ -1,7 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
+import AuthContext from '../../context/auth-context';
 import classes from "./Login.module.css";
 
 const Login = () => {
+    const context = useContext(AuthContext)
+
     const [enteredEmail, setEnteredEmail] = useState('');
     const [emailIsBlurred, setEmailIsBlurred] = useState(false);
     const [passwordIsValid, setPasswordIsValid] = useState(true)
@@ -18,6 +21,7 @@ const Login = () => {
         e.preventDefault();
         console.log("Email : ", enteredEmail);
         console.log("Password : ", inputPasswordRef.current.value)
+        context.setIsLoggedIn(true)
     }
 
     const passwordBlurHandler = () => { 

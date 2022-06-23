@@ -1,43 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Login from './Components/Auth/Login';
 import Auth from './Components/Demo/Auth';
 import ClassBasedComp from './Components/Demo/ClassBasedComp';
+import DemoUseCallback from './Components/Demo/DemoUseCallback';
 import DemoUseEffect from './Components/Demo/DemoUseEffect';
+import DemoUseMemo from './Components/Demo/DemoUseMemo';
 import DemoUseReducer from './Components/Demo/DemoUseReducer';
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
 import Notes from './Components/Notes/Notes';
 import AuthContext from './context/auth-context';
 
 const App = () => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
-
-
-    <div className='container'>
-      <h2>Hello React!!!</h2>
-      <p>This is another content...</p>
-
-
-      <ErrorBoundary>
-        <AuthContext.Provider value={{
-          isLoggedIn:false
-        }}>
-          < Auth />
-        </AuthContext.Provider>
-        {/* <DemoUseReducer /> */}
-        {/* <DemoUseEffect /> */}
-        {/* <Login />*/}
-        {/* <Notes />  */}
-      </ErrorBoundary>
-
-      {/* <ClassBasedComp show={true}>
-          <div>
-            <h5>The container Element</h5>
-          </div>
-      </ClassBasedComp> */}
-
-      {/* <Notes /> */}
-    </div >
-
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+      <div className='container'>
+        <ErrorBoundary>
+          <DemoUseMemo />
+          {/* <DemoUseCallback /> */}
+          {/* < Auth />
+          <Login /> */}
+        </ErrorBoundary>
+      </div >
+    </AuthContext.Provider>
   )
 }
 
