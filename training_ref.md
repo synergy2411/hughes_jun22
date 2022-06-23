@@ -152,3 +152,9 @@ React v16.8 -> Hooks
 
 
 # useReducer() -> to manage the complex state
+
+
+
+# Context API -> problem of "Prop-Drilling"
+
+A -> B -> C -> D -> E

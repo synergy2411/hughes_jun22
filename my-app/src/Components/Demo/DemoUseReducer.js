@@ -26,6 +26,11 @@ const reducer = (state, action) => {
             ...state,
             result : [state.counter, ...state.result]
         }
+    }else if(action.type === "DELETE_RESULT"){
+        return {
+            ...state,
+            result : state.result.filter((val,i) => action.payload !== i)
+        }
     }
     return state
 }
@@ -51,7 +56,9 @@ const DemoUseReducer = () => {
             <button className='btn btn-warning' 
                 onClick={() => dispatch({type : "STORE_RESULT"})}>STORE RESULT</button>
             <ul className='list list-group'>
-                {state.result.map((res, i) => <li className='list-group-item' key={i}>{res}</li>)}
+                {state.result.map((res, i) => <li onClick={
+                        () => dispatch({type : "DELETE_RESULT", payload : i})
+                    } className='list-group-item' key={i}>{res}</li>)}
             </ul>
         </div>
     );

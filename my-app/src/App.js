@@ -1,24 +1,33 @@
 import React from 'react';
 import Login from './Components/Auth/Login';
+import Auth from './Components/Demo/Auth';
 import ClassBasedComp from './Components/Demo/ClassBasedComp';
 import DemoUseEffect from './Components/Demo/DemoUseEffect';
 import DemoUseReducer from './Components/Demo/DemoUseReducer';
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
 import Notes from './Components/Notes/Notes';
-
+import AuthContext from './context/auth-context';
 
 const App = () => {
   return (
+
+
     <div className='container'>
       <h2>Hello React!!!</h2>
       <p>This is another content...</p>
 
-    <ErrorBoundary>
-      <DemoUseReducer />
-      {/* <DemoUseEffect /> */}
-      {/* <Login />*/}
-      {/* <Notes />  */}
-    </ErrorBoundary>
+
+      <ErrorBoundary>
+        <AuthContext.Provider value={{
+          isLoggedIn:false
+        }}>
+          < Auth />
+        </AuthContext.Provider>
+        {/* <DemoUseReducer /> */}
+        {/* <DemoUseEffect /> */}
+        {/* <Login />*/}
+        {/* <Notes />  */}
+      </ErrorBoundary>
 
       {/* <ClassBasedComp show={true}>
           <div>
@@ -27,7 +36,8 @@ const App = () => {
       </ClassBasedComp> */}
 
       {/* <Notes /> */}
-    </div>
+    </div >
+
   )
 }
 
