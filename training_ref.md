@@ -132,3 +132,19 @@ React v16.8 -> Hooks
 - Controlled
 
 # Immutable Principle - NEVER EVER modify existing state
+
+
+# useEffect() -> side effect operations
+# useEffect Flavours -
+- useEffect(cb) : cb will fire at initial rendering of component as well as every re-render cycle
+- useEffect(cb, []) : cb will fire at initial rendering of component ONLY
+- useEffect(cb, [Dependencies]) : cb will fire at initial rendering as well as whenever the dependency will change
+- useEffect(cb => clean-up, []) : clean-up function will fire before the callback after every re-rendering
+> clean-up will NOT fire immediately after initial rendering
+> clean-up will fire before the callback function for every re-rendering
+> clean-up will fire before the component unmount
+
+
+- ngOnInit / componentDidMount / useEffect(cb, [])
+- ngDoCheck / componentDidUpdate / useEffect(cb, [Dependency])
+- ngOnDestory / componentWillUnmount / useEffect(cb => cleanup, [Dependency])

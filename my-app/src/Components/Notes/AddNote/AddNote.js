@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { v4 } from 'uuid';
 
 const AddNote = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredCreatedAt, setEnteredCreatedAt] = useState('');
+    const [formIsValid, setFormIsValid] = useState(false);
+
+    useEffect(() => {
+        if(enteredTitle.length >= 6 && 
+                enteredAmount > 0 && 
+                new Date(enteredCreatedAt).getFullYear().toString() > '2019'){
+                    setFormIsValid(true)
+                }else{
+                    setFormIsValid(false)
+                }
+    }, [enteredTitle, enteredAmount, enteredCreatedAt])
 
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value)
@@ -65,7 +76,9 @@ const AddNote = (props) => {
                             <div className='form-group'>
                                 <div className='row'>
                                     <div className='col-6'>
-                                        <button type='submit' className='btn btn-primary btn-block'>Add</button>
+                                        <button type='submit' 
+                                            disabled={!formIsValid}
+                                            className='btn btn-primary btn-block'>Add</button>
                                     </div>
                                     <div className='col-6'>
                                     <button className='btn btn-warning btn-block'

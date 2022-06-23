@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from './Components/Auth/Login';
 import ClassBasedComp from './Components/Demo/ClassBasedComp';
+import DemoUseEffect from './Components/Demo/DemoUseEffect';
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
 import Notes from './Components/Notes/Notes';
 
@@ -12,8 +13,9 @@ const App = () => {
       <p>This is another content...</p>
 
     <ErrorBoundary>
-      <Login />
-      <Notes />
+      <DemoUseEffect />
+      {/* <Login />*/}
+      {/* <Notes />  */}
     </ErrorBoundary>
 
       {/* <ClassBasedComp show={true}>
