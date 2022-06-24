@@ -183,4 +183,7 @@ useMemo(()=>Fn,[]) === useCallback(cb,[])
 - <Link> : changing URL without reloading Browser
 - useParams() : access of Route Paramter
 - useHistory() : access of current URL / Change the URL
+- useLocation() : access the additional info of URL
 - Nested Routing
+- Query Parameter : additional info supplied to URL after (?)
+- Lazy Loading / on-demand loading - <Suspense> will wait till the component loaded asynchronously
