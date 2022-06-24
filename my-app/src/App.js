@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Login from './Components/Auth/Login';
 import Auth from './Components/Demo/Auth';
@@ -26,6 +26,10 @@ const App = () => {
 
         <ErrorBoundary>
           <Switch>
+            <Route path="/" exact>
+              <Redirect to="/login" />
+            </Route>
+
             <Route path="/notes">
               <Notes />
             </Route>

@@ -178,3 +178,9 @@ useMemo(()=>Fn,[]) === useCallback(cb,[])
 
 # Routing Library
 > npm i react-router-dom@5
+
+- Routing/Navigation using <Route>
+- <Link> : changing URL without reloading Browser
+- useParams() : access of Route Paramter
+- useHistory() : access of current URL / Change the URL
+- Nested Routing

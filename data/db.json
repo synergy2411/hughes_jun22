@@ -5,22 +5,56 @@
       "name": "john",
       "age": 32,
       "email": "john@test"
-    }, {
-        "id": "102",
-        "name": "jenny",
-        "age": 33,
-        "email": "jenny@test"
-      }, {
-        "id": "103",
-        "name": "alice",
-        "age": 34,
-        "email": "alice@test"
-      }
+    },
+    {
+      "id": "102",
+      "name": "jenny",
+      "age": 33,
+      "email": "jenny@test"
+    },
+    {
+      "id": "103",
+      "name": "alice",
+      "age": 34,
+      "email": "alice@test"
+    }
   ],
-  "books" : [
-    { "id" : "201", "title" : "Awesome React", "numOfPages" : 109, "author" : "101"},
-    { "id" : "202", "title" : "React for Beginners", "numOfPages" : 199, "author" : "102"},
-    { "id" : "203", "title" : "Mastering React", "numOfPages" : 249, "author" : "101"},
-    { "id" : "204", "title" : "React 101", "numOfPages" : 100, "author" : "103"}
+  "books": [
+    {
+      "id": "201",
+      "title": "Awesome React",
+      "numOfPages": 109,
+      "author": "101"
+    },
+    {
+      "id": "202",
+      "title": "React for Beginners",
+      "numOfPages": 199,
+      "author": "102"
+    },
+    {
+      "id": "203",
+      "title": "Mastering React",
+      "numOfPages": 249,
+      "author": "101"
+    },
+    {
+      "id": "204",
+      "title": "React 101",
+      "numOfPages": 100,
+      "author": "103"
+    },
+    {
+      "id": "07ab3e59-e465-4e19-9076-0ee059a4ed65",
+      "title": "Advanced Angular ",
+      "numOfPages": "199",
+      "author": "103"
+    },
+    {
+      "id": "c8885ac8-b0ad-45e4-b7f6-bbb2b8db3d47",
+      "title": "NodeJS for beginners",
+      "numOfPages": "200",
+      "author": "101"
+    }
   ]
 }
