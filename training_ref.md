@@ -152,6 +152,8 @@ React v16.8 -> Hooks
 
 
 # useReducer() -> to manage the complex state
+- Complex logic to generate new State
+- New State depends on prev State
 
 
 
@@ -164,3 +166,15 @@ A -> B -> C -> D -> E
 # useMemo(()=>{return () => {} }, []) : return the memoizedValue
 
 useMemo(()=>Fn,[]) === useCallback(cb,[])
+
+
+
+# JSON Server : to create REST API in just 30 seconds
+> npm i json-server -g
+
+
+# Axios : promise interface for consuming the REST API
+> npm i axios 
+
+# Routing Library
+> npm i react-router-dom@5

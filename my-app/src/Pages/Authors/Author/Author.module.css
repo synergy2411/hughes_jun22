@@ -1,0 +1,7 @@
+.the-item{
+    transition: 0.2s all ease-in-out;
+}
+.the-item:hover{
+    cursor: pointer;
+    background-color: rosybrown;
+}
