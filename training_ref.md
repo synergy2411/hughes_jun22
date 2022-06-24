@@ -187,3 +187,14 @@ useMemo(()=>Fn,[]) === useCallback(cb,[])
 - Nested Routing
 - Query Parameter : additional info supplied to URL after (?)
 - Lazy Loading / on-demand loading - <Suspense> will wait till the component loaded asynchronously
+
+
+
+# GraphQL
+- Alternate of REST API
+- fetches data using Queries
+- Single Endpoint
+- No over/under fetching
+
+# GraphQL Client - @apollo/client
+> npm i @apollo/client graphql

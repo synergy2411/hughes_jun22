@@ -13,6 +13,7 @@ import Header from './Components/Header/Header';
 // import Notes from './Components/Notes/Notes';
 import AuthContext from './context/auth-context';
 import AuthorDetail from './Pages/Authors/AuthorDetail/AuthorDetail';
+import Posts from './Pages/Posts/Posts';
 // import Authors from './Pages/Authors/Authors';
 
 const Authors = React.lazy(() => import('./Pages/Authors/Authors'));
@@ -36,6 +37,10 @@ const App = () => {
 
               <Route path="/notes">
                 <Notes />
+              </Route>
+
+              <Route path="/posts">
+                <Posts />
               </Route>
 
               <Route path="/login">

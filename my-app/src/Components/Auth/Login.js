@@ -1,4 +1,5 @@
 import React, { useState, useRef, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import AuthContext from '../../context/auth-context';
 import classes from "./Login.module.css";
 
@@ -8,6 +9,8 @@ const Login = () => {
     const [enteredEmail, setEnteredEmail] = useState('');
     const [emailIsBlurred, setEmailIsBlurred] = useState(false);
     const [passwordIsValid, setPasswordIsValid] = useState(true)
+
+    const history = useHistory();
 
     const inputPasswordRef = useRef(null)
 
@@ -19,9 +22,10 @@ const Login = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log("Email : ", enteredEmail);
-        console.log("Password : ", inputPasswordRef.current.value)
         context.setIsLoggedIn(true)
+        setTimeout(() => {
+            history.replace("/authors");
+        }, 1500)
     }
 
     const passwordBlurHandler = () => { 
