@@ -1,4 +1,4 @@
-import { gql, useQuery, useLazyQuery } from '@apollo/client';
+import { gql, useQuery } from '@apollo/client';
 
 const GET_ALL_POSTS = gql`
 query{
@@ -13,9 +13,9 @@ query{
 
 
 export const useFetchPosts = () => {
-    const {data, error, loading} = useQuery(GET_ALL_POSTS);
+    const {data, error, loading, refetch} = useQuery(GET_ALL_POSTS);
     // const [queryFn, {data, error, loading}] = useLazyQuery(GET_ALL_POSTS);
 
-    return { data, error, loading };
+    return { data, error, loading, refetch };
 
 }

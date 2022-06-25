@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { gql, useMutation } from '@apollo/client';
 import { useFetchPosts } from '../../Hooks/useFetchPosts';
-import { useMutation, gql } from '@apollo/client';
 
 const DELETE_POST = gql`
     mutation deletedPost($id : ID!) {
@@ -15,7 +13,7 @@ const DELETE_POST = gql`
 
 const Posts = () => {
     //  const {data, error, loading} = useQuery(GET_ALL_POSTS);
-    let {data, error, loading } = useFetchPosts();
+    let {data, error, loading, refetch } = useFetchPosts();
 
     const [mutateFn] = useMutation(DELETE_POST);
 
@@ -34,6 +32,7 @@ const Posts = () => {
             }
         }).then(resp => {
             console.log("DELETED", resp)
+            refetch()
         }).catch(console.log)
     }
     return (

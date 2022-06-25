@@ -198,3 +198,12 @@ useMemo(()=>Fn,[]) === useCallback(cb,[])
 
 # GraphQL Client - @apollo/client
 > npm i @apollo/client graphql
+
+
+<ThemeContext>
+    <AuthContext>
+        <LoggerContext>
+            <MyApp />
+        </LoggerContext>
+    </AuthContext>
+</ThemeContext>
