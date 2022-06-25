@@ -9,12 +9,9 @@ const AddGoal = () => {
 
     const addGoalHandler = (event) => {
         event.preventDefault();
-        let newGoal = {
-            id : v4(),
-            title : inputGoalRef.current.value,
-            status : false
-        }
-        dispatch({type : goalActions.ADD_GOAL , payload : newGoal })
+        // dispatch({type : goalActions.ADD_GOAL , payload : newGoal })
+        // dispatch(goalActions.addGoal(inputGoalRef.current.value))
+        dispatch(goalActions.asyncAddGoal(inputGoalRef.current.value))
     }
     return (
         <div className='row'>

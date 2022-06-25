@@ -38,16 +38,19 @@ const Login = () => {
         }
     }
    
-    let emailClasses = emailIsEmpty && emailContainsAtSign && emailIsBlurred ?
+    let emailClasses = !emailIsEmpty && emailContainsAtSign && emailIsBlurred ?
                              classes['Valid'] : classes['Invalid']
 
     return (
-        <div>
+        <div className='row'>
+            <div className='col-8 offset-2'>
+                <h4 className="text-center">Login Form</h4>
             <form onSubmit={submitHandler}>
                 {/* email - Controlled*/}
                 <label htmlFor='email'>Email : </label>
                 <input type="text"
-                    className={`form-control ${emailClasses}`}
+                    // className={`form-control ${emailClasses}`}
+                    className={`form-control`}
                     name="email"
                     value={enteredEmail}
                     onBlur = { () => setEmailIsBlurred(true)}
@@ -65,9 +68,11 @@ const Login = () => {
                     onBlur={passwordBlurHandler} />
                     {!passwordIsValid && <div className='alert alert-danger'>
                         - Password is mandatory field and should contain at least 6 characters</div>}               
+                        <br/>
                 {/* buttons */}
-                <button className='btn btn-primary' type='submit'>Submit</button>
+                <button className='btn btn-primary btn-block' type='submit'>Submit</button>
             </form>
+            </div>
         </div>
     );
 }
