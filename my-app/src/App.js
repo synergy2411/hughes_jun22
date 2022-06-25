@@ -13,6 +13,7 @@ import Header from './Components/Header/Header';
 // import Notes from './Components/Notes/Notes';
 import AuthContext from './context/auth-context';
 import AuthorDetail from './Pages/Authors/AuthorDetail/AuthorDetail';
+import Goals from './Pages/Goals/Goals';
 import Posts from './Pages/Posts/Posts';
 // import Authors from './Pages/Authors/Authors';
 
@@ -45,6 +46,10 @@ const App = () => {
 
               <Route path="/login">
                 <Login />
+              </Route>
+
+              <Route path="/goals">
+                <Goals />
               </Route>
 
               <Route path="/authors/:authorId">

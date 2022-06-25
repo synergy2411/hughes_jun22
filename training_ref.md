@@ -207,3 +207,7 @@ useMemo(()=>Fn,[]) === useCallback(cb,[])
         </LoggerContext>
     </AuthContext>
 </ThemeContext>
+
+
+# Redux Lib
+> npm i redux react-redux

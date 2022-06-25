@@ -25,6 +25,8 @@ const Header = () => {
                         <NavLink activeClassName="active" to="/authors" className='nav-link'>Authors</NavLink></li>
                     <li className='nav-item'>
                         <NavLink activeClassName="active" to="/posts" className='nav-link'>Posts</NavLink></li>
+                    <li className='nav-item'>
+                        <NavLink activeClassName="active" to="/goals" className='nav-link'>Goals</NavLink></li>
                 </ul>
                 {context.isLoggedIn && <button className='btn btn-sm btn-danger' 
                     onClick={logoutClickHandler} >Logout</button>}
