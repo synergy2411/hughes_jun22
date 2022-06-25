@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useFetchPosts } from '../../Hooks/useFetchPosts';
 import { useMutation, gql } from '@apollo/client';
 
@@ -14,30 +15,32 @@ const DELETE_POST = gql`
 
 const Posts = () => {
     //  const {data, error, loading} = useQuery(GET_ALL_POSTS);
-    const { data, error, loading } = useFetchPosts();
+    let {data, error, loading } = useFetchPosts();
 
-    const [mutateFn, { data : mData, error: mError, loading: mLoading}] = useMutation(DELETE_POST)
+    const [mutateFn] = useMutation(DELETE_POST);
 
+  
     if (error) {
-        return <p>Something bad happened</p>
+        return <p>Something bad happened!!</p>
     }
     if (loading) {
         return <p>Loading....</p>
     }
-    console.log(data);
-
-    const deleteHandler = () => {
+   
+    const deleteHandler = (postId) => {
         mutateFn({
             variables : {
-                id : "A001"
+                id : postId
             }
-        })
+        }).then(resp => {
+            console.log("DELETED", resp)
+        }).catch(console.log)
     }
     return (
         <div>
             <ul className='list-group'>
                 {data && data.posts.map(post => <li className='list-group-item'
-                    onClick={deleteHandler}
+                    onClick={() => deleteHandler(post.id)}
                     key={post.id}>{post.title}</li>)}
             </ul>
         </div>
